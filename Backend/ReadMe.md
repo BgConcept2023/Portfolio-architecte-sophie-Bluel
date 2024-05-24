@@ -1,6 +1,6 @@
 # Backend API - Sophie Bluel
 
-Ce repo contient le code backend de l'architecte Sophie Bluel. 
+Ce repo contient le code backend de l'architecte Sophie Bluel,
 
 ## Lancement du backend
 
@@ -10,11 +10,12 @@ Une fois les dépendances installées lancez le projet avec la commande `npm sta
 
 Compte de test pour Sophie Bluel
 
-```
-email: sophie.bluel@test.tld
+br_space
+email: <sophie.bluel@test.tld>
+br_space
 
-password: S0phie 
-```
+password: S0phie,
+br_space
 Lien pour voir la
 [documentation Swagger](http://localhost:5678/api-docs/)
 
