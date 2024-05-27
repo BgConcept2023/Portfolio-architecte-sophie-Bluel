@@ -1,6 +1,6 @@
 //Variables générales
 let works = []; //tableau
-
+let categories = [];
 const baliseGallery = document.querySelector(".gallery");//sélection de la classe gallery
 
 //Récupérationd du ripos sur swagger avec la fonction loadWorks
@@ -12,7 +12,14 @@ async function loadWorks(){
     affichageGallery(works);
 }
 loadWorks();
+// Récupération des catégories sur swagger
+async function loadCategories(){
+    const response = await fetch("http://localhost:5678/api/categories")
+    let categories = await response.json();
 
+    console.log(categories);
+}
+loadCategories()
 //Création des balises et affichage des images.
 
  function affichageGallery(filterWorks){  
