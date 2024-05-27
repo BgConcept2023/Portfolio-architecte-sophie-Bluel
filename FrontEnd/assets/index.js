@@ -8,8 +8,6 @@ async function loadWorks(){
    const response = await fetch("http://localhost:5678/api/works");
    let works = await response.json();
     
-   console.log(works);
-    
     //Affichage
     affichageGallery(works);
 }
@@ -17,7 +15,7 @@ loadWorks();
 
 //Création des balises et affichage des images.
 
-function affichageGallery(filterWorks){  
+ function affichageGallery(filterWorks){  
     for(let index = 0; index < filterWorks.length; index++ ){
 
 const baliseFigure = document.createElement("figure");
@@ -31,9 +29,14 @@ baliseFigure.appendChild(baliseFigcaption);
 baliseFigcaption.innerHTML = filterWorks[index].title;
 baliseImage.src = filterWorks[index].imageUrl;
 
-console.log(baliseGallery);
-console.log(baliseFigure);
+// console.log(baliseGallery);
+// console.log(baliseFigure);
 
 
     }
 }
+
+//Créations des boutons filtres
+
+
+
