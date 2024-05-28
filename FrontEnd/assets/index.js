@@ -16,14 +16,17 @@ loadWorks();
 // Récupération des catégories sur swagger
 async function loadCategories(){
     const response = await fetch("http://localhost:5678/api/categories")
-    let categories = await response.json();
+    categories = await response.json();
 
+    afficherCategorie();
     console.log(categories);
+
 }
 loadCategories()
-//Création des balises et affichage des images.
+//Création des balises et affichage des images en js
 
  function affichageGallery(filterWorks){  
+    baliseGallery.innerHTML = "";
     for(let index = 0; index < filterWorks.length; index++ ){
 
 const baliseFigure = document.createElement("figure");
@@ -42,17 +45,24 @@ baliseImage.src = filterWorks[index].imageUrl;
 
 
 //Créations des boutons filtres
+function afficherCategorie(){
+    for(let index = 0; index < categories.length; index++){
+        const containerFilter = document.getElementById("container__filter");
+        const  baliseButtonAll = document.createElement("button");
+        const  baliseButton = document.createElement("button");
+        baliseButton.classList.add("btn_choose");
+        baliseButton.innerHTML = categories[index].name;
 
-const btnAll = document.getElementById("filterUn").addEventListener("click", ()=>{
-    console.log("ok,ça marche")
-});
-const btnDeux = document.getElementById("filterDeux").addEventListener("click",()=>{
-    console.log("ok, ça fonctionne")
-});
-const btnTrois = document.getElementById("filterTrois").addEventListener("click", ()=>{
-    console.log("oh top!")
-});
-const btnQuatre = document.getElementById("filterQuatre").addEventListener("click", ()=>{
-    console.log("Les clicks fonctionnent!")
-});
+        containerFilter.appendChild(baliseButton);
+
+        baliseButton.addEventListener("click", ()=>{
+            const categId = categories[index].id;
+            const filterWork = works.filter(work=>categId === work.categoryId)
+            affichageGallery(filterWork)
+            console.log(categories[index]);
+        })
+
+
+    }
+}
 
