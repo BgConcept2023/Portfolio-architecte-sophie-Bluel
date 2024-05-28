@@ -12,6 +12,7 @@ async function loadWorks(){
     affichageGallery(works);
 }
 loadWorks();
+
 // Récupération des catégories sur swagger
 async function loadCategories(){
     const response = await fetch("http://localhost:5678/api/categories")
@@ -36,14 +37,22 @@ baliseFigure.appendChild(baliseFigcaption);
 baliseFigcaption.innerHTML = filterWorks[index].title;
 baliseImage.src = filterWorks[index].imageUrl;
 
-// console.log(baliseGallery);
-// console.log(baliseFigure);
-
-
     }
 }
 
+
 //Créations des boutons filtres
 
-
+const btnAll = document.getElementById("filterUn").addEventListener("click", ()=>{
+    console.log("ok,ça marche")
+});
+const btnDeux = document.getElementById("filterDeux").addEventListener("click",()=>{
+    console.log("ok, ça fonctionne")
+});
+const btnTrois = document.getElementById("filterTrois").addEventListener("click", ()=>{
+    console.log("oh top!")
+});
+const btnQuatre = document.getElementById("filterQuatre").addEventListener("click", ()=>{
+    console.log("Les clicks fonctionnent!")
+});
 
