@@ -221,7 +221,8 @@ li:hover {
   justify-content: center;
   padding: 30px;
 }
-.btn_choose {
+
+.btn_all, .btn_choose {
   background-color: transparent;
   color: #1d6154; 
   cursor: pointer;
@@ -236,10 +237,8 @@ li:hover {
   margin: 30px;
   padding: 10px;
 }
-#filterQuatre{
-	width: 20%;
-}
-.btn_choose:hover{
+
+.btn_choose:hover, .btn_all:hover{
 	background-color: #1d6154;
 	color: #fff;
 }
