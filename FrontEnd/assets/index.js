@@ -46,15 +46,14 @@ baliseImage.src = filterWorks[index].imageUrl;
 
 //Créations des boutons filtres
 function afficherCategorie(){
+    
     for(let index = 0; index < categories.length; index++){
         const containerFilter = document.getElementById("container__filter");
         const  baliseButtonAll = document.createElement("button");
         const  baliseButton = document.createElement("button");
         baliseButton.classList.add("btn_choose");
         baliseButton.innerHTML = categories[index].name;
-
         containerFilter.appendChild(baliseButton);
-
         baliseButton.addEventListener("click", ()=>{
             const categId = categories[index].id;
             const filterWork = works.filter(work=>categId === work.categoryId)
