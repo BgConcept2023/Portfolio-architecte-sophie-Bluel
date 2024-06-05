@@ -1,7 +1,10 @@
+
 //Variables générales
 let works = [];  //tableau
 let categories = [];
+//Récupération des sélecteurs
 const baliseGallery = document.querySelector(".gallery");//sélection de la classe gallery
+const containerFilter = document.getElementById("container_filter");
 
 //Récupérationd du ripos sur swagger avec la fonction loadWorks
 async function loadWorks(){
@@ -13,14 +16,6 @@ async function loadWorks(){
 }
 loadWorks();
 
-// Récupération des catégories sur swagger
-async function loadCategories(){
-    const response = await fetch("http://localhost:5678/api/categories")
-    categories = await response.json();
-
-    afficherCategorie();
-}
-loadCategories()
 //Création des balises et affichage des images en js
 
  function affichageGallery(filterWorks){  
@@ -40,18 +35,25 @@ loadCategories()
     }
 }
 
+// Récupération des catégories sur swagger
+async function loadCategories(){
+    const response = await fetch("http://localhost:5678/api/categories")
+    categories = await response.json();
+
+    afficherCategorie();
+}
+loadCategories()
 
 //Créations des boutons filtres
  function afficherCategorie(){
     
     for(let index = 0; index < categories.length; index++){
-        const containerFilter = document.getElementById("container__filter");
         const  baliseButton = document.createElement("button");
-        baliseButton.classList.add("btn_choose");
+        baliseButton.classList.add("btn_select");
         baliseButton.innerHTML = categories[index].name;
         containerFilter.appendChild(baliseButton);
 
-        //filtrage des catégories au click
+        // //filtrage des catégories au click
         baliseButton.addEventListener("click", ()=>{
             const categId = categories[index].id;
             const filterWork = works.filter(work=>categId === work.categoryId)
@@ -60,4 +62,3 @@ loadCategories()
         })   
     }
 }
-
