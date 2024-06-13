@@ -31,8 +31,10 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 }
-ol, ul {
+ol, ul, li, a {
+	cursor: pointer;
 	list-style: none;
+	text-decoration: none;
 }
 blockquote, q {
 	quotes: none;
@@ -93,6 +95,7 @@ nav ul {
 nav li {
 	padding: 0 10px;
 	font-size: 1.2em;
+	
 }
 
 li:hover {
