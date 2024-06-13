@@ -1,3 +1,11 @@
 {
-    "liveServer.settings.port": 5501
+    "liveServer.settings.port": 5501,
+    "workbench.colorTheme": "Monokai Dimmed",
+    "workbench.preferredDarkColorTheme": "Firefox Quantum Dark",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.editor.autoLockGroups": {
+        "gitlens.rebase": true
+    },
+    "remote.WSL.debug": true,
+    "webvalidator.validateOnSave": true
 }
