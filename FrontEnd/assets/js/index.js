@@ -7,6 +7,7 @@ let categories = [];
 const baliseGallery = document.querySelector(".gallery");//sélection de la classe gallery
 const containerFilter = document.getElementById("container_filter");
 const buttons = document.querySelectorAll("button");
+
 //Récupérationd du ripos sur swagger avec la fonction loadWorks
 async function loadWorks(){
     const response = await fetch("http://localhost:5678/api/works");
