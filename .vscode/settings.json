@@ -1,6 +1,6 @@
 {
-    "liveServer.settings.port": 5501,
-    "workbench.colorTheme": "Monokai Dimmed",
+    "liveServer.settings.port": 5502,
+    "workbench.colorTheme": "Andromeda Bordered",
     "workbench.preferredDarkColorTheme": "Firefox Quantum Dark",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.editor.autoLockGroups": {
