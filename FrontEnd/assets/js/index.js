@@ -12,7 +12,7 @@ const buttons = document.querySelectorAll("button");
 async function loadWorks(){
     const response = await fetch("http://localhost:5678/api/works");
     works = await response.json();
-    console.log(works);
+   
     
     //Affichage
     affichageGallery(works);
@@ -66,8 +66,7 @@ function afficherCategorie(){
                     })   
                     
                     }
-                    console.log(buttons)
-                    console.log(categories);
+                
 };
 
 

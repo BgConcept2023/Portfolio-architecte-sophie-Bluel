@@ -4,6 +4,7 @@ const email = document.querySelector("form #email");
 const password = document.querySelector("form #password");
 const messageError = document.querySelector("#contact-2 p");
 const login = document.querySelector("#login");
+const containerFilter = document.querySelector("#container_filter");
 //  console.log(email, password, form, messageError);
 
 //ne pas recharger la page
@@ -32,10 +33,12 @@ form.addEventListener('submit',(event)=>{
           localStorage.setItem("token",token);
           console.log("Success:", result);
 
-          window.location.href="index.html"
+          window.location.href="index.html";
+          containerFilter.style.display = "none";
           
         } catch (error) {
           console.error("Error:", error);
+          alert("erreur")
         }
       }
 

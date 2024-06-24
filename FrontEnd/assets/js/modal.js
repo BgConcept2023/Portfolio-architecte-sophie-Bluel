@@ -10,6 +10,7 @@ elementH2.textContent ="Galerie photos";
 
 const faSolid = document.createElement("i");
 faSolid.className = "fa-solid fa-xmark";
+
 const miniGallery = document.createElement("div");
 miniGallery.className = "mini-galerie";
 
@@ -18,7 +19,7 @@ btnAjout.className = "btn_submit";
 btnAjout.type = "submit";
 btnAjout.textContent = "Ajouter une photo";
 
-console.log(modalPhotos, faSolid, elementH2, btnAjout);
+// console.log(modalPhotos, faSolid, elementH2, btnAjout);
 
 //Insertion des élemnts dans le html
 
@@ -29,14 +30,30 @@ modalPhotos.appendChild(elementH2);
 modalPhotos.appendChild(miniGallery);
 modalPhotos.appendChild(btnAjout);
 
+
 //affichage modal au click
 const containerAjout = document.querySelector(".container_global");
-const buttonEdit = document.querySelector("#btn_Click");
+const buttonClose = document.querySelector(".modal_photos .fa-xmark");
+const buttonEdit = document.querySelector("#btn_Click2");
 const buttonAjout = document.querySelector(".btn_submit");
+
 
 
 buttonEdit.addEventListener("click",()=>{
    containerGlobal.style.display = "flex";
-console.log("ok")
+   
 })
 // fermer la modale
+buttonClose.addEventListener("click",()=>{
+   containerGlobal.style.display = "none";
+   
+})
+
+// affichage galleris modal
+async function loadMiniGallery(){
+   baliseGallery.innerHTML = ""; 
+   works = await affichageGallery();
+   affichageGallery()
+}
+
+loadMiniGallery()
