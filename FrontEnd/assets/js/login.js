@@ -31,12 +31,15 @@ form.addEventListener('submit',(event)=>{
           const token = result.token;
           localStorage.setItem("token",token);
           console.log("Success:", result);
+
+          window.location.href="index.html"
+          
         } catch (error) {
           console.error("Error:", error);
         }
       }
 
-      
+
       
 
      

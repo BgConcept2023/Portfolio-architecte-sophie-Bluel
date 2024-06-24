@@ -18,7 +18,7 @@ btnAjout.className = "btn_submit";
 btnAjout.type = "submit";
 btnAjout.textContent = "Ajouter une photo";
 
-// console.log(modalPhotos, faSolid, elementH2, btnAjout);
+console.log(modalPhotos, faSolid, elementH2, btnAjout);
 
 //Insertion des élemnts dans le html
 
@@ -35,7 +35,8 @@ const buttonEdit = document.querySelector("#btn_Click");
 const buttonAjout = document.querySelector(".btn_submit");
 
 
-buttonAjout.addEventListener("click",()=>{
-   containerAjout.classList.add("container_global");
+buttonEdit.addEventListener("click",()=>{
+   containerGlobal.style.display = "flex";
 console.log("ok")
 })
+// fermer la modale
